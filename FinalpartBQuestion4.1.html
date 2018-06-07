@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Bust or Sum</title>
+<script>
+
+	function getHand()
+	{
+	var hand = [1, 2, 3, 14, 5];
+	var cards = twentyOne(hand);
+	document.getElementById('outputDiv').innerHTML= "Total score = " + cards;
+	}
+	
+function twentyOne(hand)
+{
+
+var callPoint= 0;
+var cards = 0;
+	for(var index = 0; index < hand.length; ++index)
+	{
+		cards += hand [index];
+	}
+	if(cards <= 21 )
+	{
+		callPoint = cards;
+	}
+	else
+	{
+		callPoint = "Bust";
+	}
+return callPoint;
+}
+
+
+	</script>
+</head>
+
+<body>
+<h1>21 Score Card</h1>
+Rules:
+<ul>
+<li>Ace = 1 OR 11</li>
+<li>Kings = 10</li>
+<li>Queens = 10</li>
+<li>Jacks = 10 </li>
+<li>Face Value= Face Value ex. 1=1 </li>	
+</ul>
+
+
+<button type="button" onClick="getHand()">Bust or Sum</button>
+<div id="outputDiv"></div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>A Program to Talk about Animals</title>
+<script type="text/javascript">
+/* Defining Table
+ * Input: A person's favorite animal
+ * Processing: Create a response for that person
+ * Output: The response
+ */
+function getAnimal() {
+    // This line prompts the user to type in their favorite animal
+    var animal = window.prompt("Please enter your favorite animal");
+
+    // Response to the user 
+	
+   if (animal == "Bald Eagle") 
+    {
+	var animalResponse = "Hey! I love the " + animal + " as well. Good minds think alike!";	
+    }  
+	else if (animal == "bald eagle") 
+    { 
+	var animalResponse = "Hey! I love the " + animal + " as well. Good minds think alike!";	
+    }   
+	else 
+    {
+    var animalResponse = "Wow! I love the " + animal + " as well.  My favorite animal is the Bald Eagle.";
+    }
+	
+    // The next line causes the computer to display
+    // a greeting to the user in a popup window.
+    window.alert(animalResponse);
+}
+</script>
+</head>
+
+<body>                                      
+    <button type="button" onclick="getAnimal()">Animals!</button>
+</body>
+</html>

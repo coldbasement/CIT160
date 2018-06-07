@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>WindChill</title>
+
+<script type="text/javascript">
+function doInputOutput () {
+// Use Float because of deciminal numbers in this case
+var tempF = parseFloat(document.getElementById('temp').value);
+var speed = parseFloat(document.getElementById('windSpeed').value);
+//I added this
+var result = windChill(tempF,speed);
+document.getElementById('outputDiv').innerHTML= result + " Degrees Fahrenheit"
+}
+
+function windChill (tempF, speed)
+	{
+// keep this to two decimal places and it will also round it to that place. 
+// You are parentheses happy just like me. I had to trust the code to do the order of operations correctly and it will. I had to take some out in order for the equation to run. 
+var windchill = (35.74 + 0.6215 * tempF - 35.75 * Math.pow (speed, 0.16) + 0.4275* tempF * Math.pow(speed, 0.16)).toFixed(2)
+ return windchill;	
+				 
+}
+</script>
+</head>
+<body>
+<script type="text/javascript">
+
+doInputOutput();
+windChill();
+</script>
+<p>Temperature: <input type="text" id="temp" size="3"></p>
+<p>Wind Speed: <input type="text" id="windSpeed" size="3"></p>
+<button type="button" onclick="doInputOutput()"> Wind Chill </button>
+<div id="outputDiv"></div>
+</body>
+</html>

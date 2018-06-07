@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Sum</title>
+<script type="text/javascript">
+function sum10(){
+    var sum = 0;
+	var n = parseInt(document.getElementById('number').value);
+    var i=1;
+	var arr = [];
+	var evenSum= 0;
+	var oddSum=0 ;
+	 for( i=1;i <= n ; i++)
+	 {
+		 arr.push(i);
+		if (i % 2 != 0)
+		{
+		 oddSum += i;	
+		} 
+		 else
+		{
+		 evenSum += i;	
+		}
+		
+	   
+	 }
+	
+document.getElementById('odd').innerHTML=oddSum;
+}
+	
+  
+</script>
+</head>
+<body>
+<h1> Sum </h1>
+Number or Numbers: <input type="text" id="number" size="7"><br>  
+<button type="button" onclick="sum10()">sum</button>
+<div id="odd"></div>
+</body>
+</html>

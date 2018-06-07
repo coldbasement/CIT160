@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Get Last</title>
+<script>
+function test()
+{
+ var list =[1,2,3,4,5,6,7,8,9,10,30];
+ var result = getLast(list);
+document.getElementById('outputDiv').innerHTML = result;
+}
+function getLast(list)
+{
+ var callPoint = list[list.length -1];
+ return callPoint;
+}
+	
+	
+	</script>
+</head>
+
+<body>
+<h1>Get Last Element</h1>
+<p> Array =[1,2,3,4,5,6,7,8,9,10,30] </p>
+<button type="button" onClick="test()">Get Last</button>
+<div id="outputDiv"></div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title> fifteen </title>
+<script type="text/javascript">
+/* Input: two numbers from text fields 
+ * Processing: Check if 1. BOTH numbers ARE GREATER than 15  OR 2. The SUM of BOTH have to be GREATER than 15
+ * Output: TRUE if they EITHER reach the CONDITION and FALSE if the do not EITHER CONDITION
+ */
+function fifteen(){
+	
+var one = parseFloat(document.getElementById('one').value);
+var two = parseFloat(document.getElementById('two').value);
+var response= "";
+	
+ if (one > 15 && two > 15 || one + two > 15){
+	 
+	 response = "True";
+ } else
+{
+	response = "False";
+}
+	document.getElementById('output').innerHTML=response;
+}
+
+</script>
+</head>
+
+<body>
+Please enter two numbers:
+<input type="text" id="one" size="5">
+<input type="text" id="two" size="5">
+<button type="button" onclick="fifteen()">check</button>
+<div id="output"></div>
+</body>
+</html>

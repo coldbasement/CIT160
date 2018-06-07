@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Volume of a Tetrahedron</title>
+<!--
+Input: length since all sides are the same
+Processing: v = Lenth^3/6√2
+Output: Volume of a Tetrahedron
+var r = 2 * k + (6 - n) / (3 * Math.pow (p, 2));
+-->
+<script type="text/javascript">
+
+	
+ function computeVolume()
+{
+	
+ var length = parseFloat (document.getElementById ('length').value);
+ // var v = Math.pow(length,3)/(6*(Math.SQRT2));
+var v = (length*length*length)/(6*Math.sqrt(2));
+  
+document.getElementById('volume').innerHTML = v;
+	
+	
+}
+
+</script>
+</head>
+
+<body>
+    <h1>Volume of a Tetrahedron</h1>
+    Side Length <input type="text" id="length"><br>
+    <button type="button" onclick="computeVolume()">Volume</button><br>
+    Volume <div id="volume"></div>
+</body>
+</html>

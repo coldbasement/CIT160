@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Power of 2</title> 
+<script>
+/*
+Input: well I did not want to copy your code but rather I wanted to show I understood the concepts here. I would use text fields and have the user input the base they would like to use and the power (min and Max) and skip power
+Process: Multiple the Min and Max power and use the skip power indicated 
+Output: Min and Max power by skip power
+
+*/
+function power2()
+{
+ var i;
+ var skip = 1;
+ var cons = 31;
+  var text ="";
+for (i=0; i<= cons; i+=skip)
+{
+var current= Math.pow (2,i);
+ text += current;
+//setting a condition to take off the trailing comma
+if (i<= cons-skip)
+{
+	text += ", ";
+}
+}
+document.getElementById("outPut").innerHTML =text;	
+}
+	</script>
+</head>
+
+<body>
+<h1>Power of 2</h1>
+<button type="button" onClick="power2()">Power of 2</button>
+<div id="outPut"></div>
+
+
+</body>
+</html>

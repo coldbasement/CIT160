@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Powers of a Number</title>
+<script>
+function doPowers()
+{
+	var baseInPutText = document.getElementById('baseInput').value;
+	var minPowerInPutText = document.getElementById('minPowerInput').value;
+	var maxPowerInPutText = document.getElementById('maxPowerInput').value;
+	var skipPowerInPutText = document.getElementById('skipPowerInput').value;
+	var base = parseInt(baseInPutText);
+	var minPower = parseInt(minPowerInPutText);
+	var maxPower = parseInt(maxPowerInPutText);
+	var skipPower = parseInt(skipPowerInPutText);
+	var status = "Good";
+	
+	if (baseInPutText == "")
+	 {
+		 status = "Must provide base";
+	 } 
+	else if(minPowerInPutText == "")
+	 {
+	    status = "Must provide min power";
+	 } 
+	else if (maxPowerInPutText == "") 
+	 {
+		 status = "Must provide max power";
+	 } else if (maxPower<minPower)
+	 {
+		 status = "Max<Min!!NOPE!";
+	 }
+	else if ( skipPowerInPutText =="")
+	{
+	 skipPower = 1;
+	document.getElementById('skipPowerInput').value= skipPower;
+	}
+	
+	
+	document.getElementById('statusOutput').value = status;
+	
+	if (status == "Good")
+	{
+		var output = "";
+		
+		for (var power = minPower; power < maxPower; power += skipPower )
+		{
+			var current = Math.pow (base,power);
+			output += current;
+			if (power < maxPower-skipPower)
+			{
+			output += ", ";
+			}
+		}
+		document.getElementById('outputDiv').innerHTML = output;
+	}
+}
+	
+
+	
+ </script>
+</head>
+<body>
+Input base: <input type ="text" id= "baseInput"/><br>
+Input Min power: <input type ="text" id= "minPowerInput"/><br>
+Input Max power: <input type ="text" id= "maxPowerInput"/><br>
+Input power skip count (default 1): <input type ="text" id= "skipPowerInput" size="6"/><br>
+Status: <input type ="text" readonly id= "statusOutput"/><br>
+<button type= "button" onClick="doPowers()">Run</button>
+<div id="outputDiv"></div>
+</body>
+</html>

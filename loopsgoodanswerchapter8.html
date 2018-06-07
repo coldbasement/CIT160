@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Odd Numbers Sum</title>
+<script type="text/javascript">
+/* Defining Table 
+* Input: Integer number
+* Processing: 1.Start integer sequence with 1 and go up to the entered integer number
+* 2.Check Modulus 2 of the current sequenced number. If Mod result is 1, then add sequenced number to odd sum
+* 3.Ignore mod results of than result on 0 (don't add to sum of odds)
+* Output: Sum of all odd integers starting from 1 to "n" integer number inputted by user
+*/
+function sumOdds() {
+// Set user's integer number in variable "n"
+var n = parseInt(document.getElementById('enterINT').value);
+// Create container variables
+var oddtotal = 0;
+var i = 1; //Sequence number from loop operation
+//Perform logical operation
+for (; i <= n ; i++ ) {
+if ( i % 2 == 1){
+oddtotal+= i;
+}
+}
+oddtotal = " The sum of the odds is = " + oddtotal;
+//Display Result
+var div = document.getElementById('output');
+div.innerHTML = oddtotal;
+}
+
+</script>
+</head>
+
+<body>
+<h1>Summing Odd Integers</h1>
+Enter any integer number: <input type="text" id="enterINT">
+<button type="button" onclick="sumOdds()">Get Sum!</button><br><br>
+<div id="output"></div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Miles Per Gallon Converter</title>
+<script type="text/javascript">
+
+function getMile()
+	{
+	
+	var Beg = document.getElementById('beginningIputBox').value;
+	var end = document.getElementById('endingInputBox').value;
+	var gas = document.getElementById('gasInputBox').value;
+	
+	var b = parseFloat(beg);
+	var e = parseFloat(end);
+	var g = parseFloat(gas);
+	
+	var mpg = "Your vehicle gets " + (e-b)/g + "  Miles/Gallon of Gas";
+	
+	
+	
+	document.getElementById('milesDiv').innerHTML = mpg;
+	
+}
+</script>
+</head>
+<body>
+Enter your car's beginning odometer milage: <input type="text" id="beginningIputBox"><br>
+<br>
+Enter your car's ending odometer milage: <input type="text" id="endingInputBox"><br>
+<br>
+What was the volume(in gallons) of gasoline you used: <input type="text" id="gasInputBox"><br>
+<br>
+<button type="button" onclick="getMile()">Convert</button> 
+<p>============================================================</p>
+<div id="milesDiv"></div>                
+</body>
+</html>

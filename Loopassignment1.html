@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>All Inigers 1 from n</title>
+<script>
+function getNum()
+{
+var number= parseInt(document.getElementById('number').value);
+var i;
+var output;
+for (i=0; i > number; i++)
+{
+  var output = document.write( i + "</br>");
+}
+  document.getElementById('outputDiv').innerHTML=output;
+}
+</script>
+</head>
+
+<body>
+<h1> This will give you a list of intigers from the number you input </h1>
+
+Enter a number: 10<br>
+	<button type="button" onclick="getNum()">GetNumbers</button>
+<div id= "outputDiv"> </div>
+
+</body>
+</html>

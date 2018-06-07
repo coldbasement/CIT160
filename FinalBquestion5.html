@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Compute Volume of Cone</title>
+<script>
+ function getStuff()
+{
+ var radius = 3 ;
+ var height = 6;
+ var result = coneVolume(radius, height);
+document.getElementById('outputDiv').innerHTML = "Volume of Cone = "+ result;
+}
+function coneVolume(radius, height)	
+{
+ var pie = Math.PI;
+ var radiusSq = Math.pow(radius,2);
+ var volume = ((pie * radiusSq * height)/3).toFixed(2);
+ return volume;
+ 
+
+}
+</script>
+</head>
+
+<body>
+<h1> Compute the Volume of a Cone</h1>
+<button type="button" onClick="getStuff()">Compute</button>
+<div id="outputDiv"></div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Child Arithmetic</title>
+
+<script type="text/javascript">
+/* Input: An integer, an operator, an integer
+* Processing: Compute the correct answer 
+* Output: Output correct answer and compare to user's. Output a response.
+*/
+function checkskills() {
+
+var text1 = document.getElementById('integer1InputBox').value;
+var int1 = parseFloat(text1);
+
+var text2 = document.getElementById('operatorInputBox').value;
+/*// var operator = parseFloat(text2); Leave it as a string
+
+*/
+var text3 = document.getElementById('integer2InputBox').value;
+var int2 = parseFloat(text3);
+
+var text4 = document.getElementById('userresultInputBox').value;
+var userresult = parseFloat(text4);
+
+var result = i
+
+// Display the message to the user.
+document.getElementById('outputDiv').innerHTML = message;
+}
+</script>
+</head>
+
+<body> 
+<h1>Test Your Math Skills!</h1> 
+<input type="text" id="int1InputBox" placeholder="Number"> 
+<input type="text" id="operatorInputBox" placeholder="Operator"> 
+<input type="text" id="integer2InputBox" placeholder="Number">
+=
+<input type="text" id="userresultInputBox" placeholder="Answer">
+<button type="button" onclick="checkskills()">Check</button>
+<div id="outputDiv"></div> 
+</body> 
+</html>

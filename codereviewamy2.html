@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Sleeping In</title>
+
+<script type="text/javascript">
+//Thanks to my home teacher Aaron who helped make a few tweaks with me.
+//Thank you Brother Reading for the great video tutorial. Very helpful.
+/*Input; Input from computer clock
+*Processing: determine days to sleep in
+*Output: sleep in on weekends and holiays
+*/
+function canISleepInToday (){
+// Input from computer clock
+var now = new Date ();
+var month = now.getMonth();
+var dayOfMonth = now.getDate ();
+var dayOfWeek = now.getDay ();
+var output = "";
+
+var isWeekend = (dayOfWeek == 0) || (dayOfWeek == 6)
+var isNewYear = (month == 0 && dayOfMonth == 1)
+var isChristmas = (month == 11 && dayOfMonth == 25)
+var isJuly4th = (month == 6 && dayOfMonth == 4)
+var isHoliday = isNewYear || isChristmas || isJuly4th
+
+//Evaluate days to sleep in.
+if ( isWeekend || isHoliday)
+{
+output = "Sleepy, Sleep Time!";
+}
+else 
+{ 
+output = "Wake me up, me up before you go go!";
+}
+document.getElementById("outputDiv").innerHTML = output;
+}
+</script>
+</head>
+
+<body>
+<h3>To sleep or not to sleep, that is the question?</h3> 
+
+<button type="button" onclick="canISleepInToday()">Wake up, or Sleep In?</button>
+<div id="outputDiv"></div>
+</body>
+</html>

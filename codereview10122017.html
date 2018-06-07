@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Miles per Gallon</title>
+<script> //lowercase
+
+/* input: Beginning Odometor, Ending Odometor, gallon of Gas used
+* Processing: Ending Odometor - Beginning Odemotor / Gallons of Gas used
+* Output Milage in miles per gallon
+*/
+function ComputeMPG(){
+//Get the begining and ending odometor readings
+var beg = document.form1.Beg.value;
+var end = document.form1.End.value;
+var gas = document.form1.gas.value;
+
+//I added this :)
+var c = parseFloat(gas);
+var a = parseFloat(beg);
+var b = parseFloat(end);
+
+
+// Computes the mpg
+var mpg = (b-a)/c;
+
+//outputs of the calculations
+var output = "mpg: " + mpg; // single quotes 
+
+// Display the greeting to the user in a div.
+var div = document.getElementById('output'); //var was capitalized
+div.innerHTML = output;
+}
+</script>
+</head>
+
+<body>
+<h1>Miles per gallon</h1>
+<form name="form1">
+<strong>Beginning Odometer:</strong> 
+<input type="text" name="Beg"> 
+<strong>Ending Odometer:</strong> 
+<input type="text" name="End"> 
+<strong>Gallons of Gas:</strong> 
+<input type="text" name="gas"><br><br>
+<button type="button" Onclick="ComputeMPG()">Click to begin calculation</button>
+<div id="output"></div>
+</form>
+</body>
+</html>

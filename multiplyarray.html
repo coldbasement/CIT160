@@ -1,0 +1,43 @@
+<!doctype HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Last Arrays</title>
+<script type="text/javascript">
+
+function testingFunction() {
+var list = [17, 8, 9, 5, 20];
+var multiplier = 3;
+
+
+var products = multiply(list, multiplier);
+
+var output =  "The multiplication of the Array by 3 =  " + products;
+
+document.getElementById("output").innerHTML = output;
+}
+
+
+// Multiply all list numbers
+function multiply(list, multiplier) {
+var multiplyArray = [];
+
+for (var i = 0; i < list.length ; i++ ) {
+
+multiplyArray[i] = list[i] * multiplier;
+
+}
+return multiplyArray;
+}
+
+</script>
+</head>
+
+<body>
+ <h1> Multiply Array by 3</h1>
+ <p>Array = [17, 8, 9, 5, 20]</p>
+<button type="button" onclick="testingFunction()">Multiply Array by 3</button> 
+<div id="output"></div>
+
+</body>
+</html>

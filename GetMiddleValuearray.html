@@ -1,0 +1,46 @@
+<!doctype HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Sum of the middle</title>
+
+<script type="text/javascript">
+
+
+function theMiddle(){
+var list = [12,14,16,18,20,22,24,26,28,30] 
+var middleNumber= getMiddle(list);
+document.getElementById("output").innerHTML = " The middle number is " + middleNumber;
+}
+
+function getMiddle(list){
+//figure out if the list has odd or even numbers in a list (even)
+if(list.length %2 ==0){ 
+var middle = list.length / 2; 
+var middleHigh = list[middle];
+var midddleLow = list[middle-1];
+var addMiddle = (middleHigh + midddleLow).toFixed(2);
+var middleNumber = addMiddle / 2;
+return middleNumber;
+
+
+} 
+
+else{ 
+var middle = Math.round(list.length / 2); 
+var middleNumber = list [middle-1];
+return middleNumber;
+}
+
+}
+
+</script>
+</head>
+<body>
+<h1> Middle Value </h1>
+<p> Array List- [12,14,16,18,20,22,24,26,28,30] </p>
+<button type="button" onclick="theMiddle()"> Get the middle Value</button>
+<p></p>
+<div id="output"></div>
+</body>
+</html>

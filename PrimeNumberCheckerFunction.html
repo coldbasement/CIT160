@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>PrimeCheck</title>
+<script>
+function checkInput()
+{
+	var userInput = parseInt(document.getElementById('userInput').value);
+	var output="";
+	var interval = (getCurrentTime () - lastTime)/ 1000; // dividing changes from milliseconds to seconds
+	if (userInput <100)
+	{
+		output += userInput + " is not three digits.<br>";
+	}
+	else if (!isPrime(userInput))
+	{
+		output += userInput + " is not prime.<br>";
+		
+	}
+	else if (userInput == lastPrime)
+	{
+		output += "Sneeky- you tried to reuse your last number.<br>";
+	}
+	else 
+	{
+		output += "Good work! You took " + interval + " seconds to get a right answer <br>";
+		//need to reset the output otherwise the seconds will be wrong
+		lastTime = getCurrentTime();
+		lastPrime = userInput;
+	}
+	document.getElementById('outputDiv').innerHTML=output;
+}
+	function isPrime(aNumber)
+{
+	var retval = aNumber % 2 !=0;
+	for (var check =3; retval && check <= Math.sqrt (aNumber); check +=2)
+		{
+			retval = aNumber % check !=0;
+		}
+	
+	return retval;
+	
+}
+
+var lastTime;
+var lastPrime= -1;
+function initialize ()
+{
+	lastTime = getCurrentTime ();
+}
+	
+function getCurrentTime ()
+{
+	return new Date ();
+}
+
+</script>
+</head>
+
+<body>
+<script>
+initialize();
+</script>
+Please input a three digit prime number: <input type="text" id="userInput"/>
+<br><button type="button" onClick="checkInput()">Check</button>
+<div id="outputDiv"/>
+</body>
+</html>

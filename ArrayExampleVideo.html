@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Array Example</title>
+</head>
+
+<body>
+<script>
+var infieldPositions = new Array();// Delcare Array
+infieldPositions[0] = "Pitcher"; //Initialize First Index
+infieldPositions[1] = "Catcher";
+infieldPositions[2] = "1st Base";
+infieldPositions[3] = "2nd Base";
+infieldPositions[4] = "Short Stop";
+infieldPositions[5] = "3rd Base";
+
+//Condenced Notation!! 
+var outfieldPositions = new Array("Left Field","Center Field", "Right Field");//Declares and initializes in one step 0=Left Field...
+
+// Literal Notation !!
+var familyMembers = ["Kody","Rachelle","Londyn","Navy","Capri","Luna",];
+
+	
+
+//Getting Information out of the arrays 
+document.write(infieldPositions[0]);
+document.write("<br/>");
+document.write(outfieldPositions[2]);
+document.write("<br/>");	
+document.write(familyMembers[2]);
+document.write("<br/>");
+// adding to arrays
+	
+familyMembers[6]= "Avery";
+document.write("<br/>");	
+document.write("My dog's name is " + familyMembers[6]);
+document.write("<br/>");
+	// chaging the values inside the array
+infieldPositions[1]= "Behind the Dish";
+document.write("<br/>");
+document.write("The Catcher's name was changed to" +infieldPositions[1]);
+document.write("<br/>");	
+// join two arrays
+
+var baseballPositions = infieldPositions.concat(outfieldPositions);
+document.write("<br/>");
+
+//using a for loop to loop for all values 
+	
+	for (var i = 0; i < baseballPositions.length; i++)
+	{
+		document.write(baseballPositions[i]+ "<br/>")
+	}
+document.write("<br/>");
+	// notice the plural 
+for(familyMember in familyMembers)
+{
+	document.write(familyMembers[familyMember]+ "<br/>");
+	
+}
+
+</script>
+
+</body>
+</html>

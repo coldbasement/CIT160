@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Wakeup</title>
+<script type="text/javascript">
+
+function wake()
+{
+ var now = new Date();
+ var month = now.getMonth();
+ 
+ var dayOfMonth = now.getDate();
+ var dayOfWeek = now.getDay();
+ var message;
+	
+ if(month == 0 && dayOfMonth == 1||month == 11 && dayOfMonth == 25||month == 6 && dayOfMonth == 4)
+ {
+	var message = "Sleep in";
+
+ }else if( dayOfWeek == 0 || dayOfWeek == 6)
+ {
+	 var message = "Sleep in";
+ }
+ else 
+   {
+	var message =  "Get Up!"; 
+ } 	
+	
+document.getElementById('wakeUpDiv').innerHTML = message;
+	
+}
+	
+</script>
+</head>
+<body>
+
+<button type="button" onclick="wake()">Wake Check</button> 
+<p>================================================================</p>
+<div id="wakeUpDiv"></div>  
+
+          
+</body>
+</html>

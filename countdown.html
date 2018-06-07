@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CountDown</title> 
+<script>
+function countDown() {
+    var output = "";
+    var skip = parseInt(document.getElementById('integer').value);
+    var i = 100;
+    while (i >= 0) {
+        output += i + "<br>";
+        i -= skip;
+    }
+    document.getElementById('output').innerHTML = output;
+}
+	</script>
+</head>
+
+<body>
+<h1>CountDown</h1>
+Enter an ineger: <input type="text" id="integer">
+<button type="button" onClick="countDown()">CountDown</button>
+<div id="output"></div>
+
+
+</body>
+</html>

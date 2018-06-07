@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Compute</title>
+<script type="text/javascript">
+
+function compute()
+{
+var num1 = parseFloat(document.getElementById('first').value);
+var num2 = parseFloat(document.getElementById('second').value);
+var operator= document.getElementById ('operator').value;
+var answer= parseFloat(document.getElementById('answer').value);
+var check;
+
+	if ( operator == "+" && answer == num1+num2)
+	{
+	  var check = "Correct! Good Job.";	
+	} 
+	else if(operator == "-" && answer == num1-num2)
+	{
+	  var check = " Correct! Good Job.";
+	} 
+	else if(operator == "*" && answer == num1*num2 )
+	{
+	  var check = "Correct! Good Job.";
+	} 
+	else if(operator == "/" && answer == num1/num2)
+	{
+	  var check = "Correct! Good Job.";
+	} 
+	else
+	  {
+	  var check = "Incorrect. Try again!";		
+	 	
+	  }
+	document.getElementById('checkDiv').innerHTML = check; 
+	
+	
+}
+</script>
+</head>
+<body>
+	<h1> Test Your Math Skills!</h1>
+		
+<form autocomplete="off">
+
+<input id ="first" type ="text" placeholder="Number">
+
+	<!--<select id= "operator">
+	 <option value = "">choose</option>
+	 <option value = "+" >+</option>
+	 <option value = "-" >-</option>
+	 <option value = "/" >/</option>
+	 <option value = "*" >*</option>
+	</select> --> 
+
+<input id ="operator" type = "text" placeholder="Operator"> 
+<input id= "second" type ="text" placeholder="Number">
+ = 
+<input id= "answer" type="number" placeholder="Answer"> 
+
+</form> <br>
+
+<button type="button" onclick="compute()">check </button> 
+<p>================================================================</p>
+<div id="checkDiv"></div>  
+
+          
+</body>
+</html>
+

@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Count Even Numbers In Array</title>
+</head>
+<script>
+function getList(){
+var list = [14,-2,2,11,3,-10,4,-1,-8,16,18,8,10,-3,-10,-4,0,9,6];
+var counter = countEvens(list);
+
+document.getElementById("countDivOutput").innerHTML = "The number of even numbers in the array = " + counter + ".";	
+
+}
+function countEvens(list)
+{
+		
+var counter = 0;
+
+for (var index = 0; index < list.length; index++) { 
+//++index; 
+if(list[index] % 2 == 0){
+counter += 1; 
+} 
+} 
+return counter;
+}
+</script>
+<body>
+<h1>Count Evens</h1>
+<p>Array =[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20] </p>
+<button type="button" onClick="getList()">Count Even</button>
+<div id="countDivOutput"></div>
+</body>
+</html>

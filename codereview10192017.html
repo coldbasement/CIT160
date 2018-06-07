@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>What Shoes?</title>
+
+<script type="text/javascript">
+/* Input: A type of weather
+* Processing: Determine which shoes are appropriate for the weather 
+* Output: A type of appropriate shoe
+*/
+function whichShoes() {
+
+// Get the user input from a text field.
+var weather = document.getElementById('weatherInputBox').value;
+
+if (weather == "hot") {
+message = "sandals";
+}
+
+else if (weather == "rain") {
+message = "galoshes";
+}
+
+else if (weather == "snow") {
+message = "boots";
+}
+
+else {
+message = "shoes";
+}
+
+// Display the message to the user.
+document.getElementById('outputDiv').innerHTML = message;
+}
+</script>
+</head>
+
+<body> 
+Please enter weather (hot, rain or snow): <input type="text" id="weatherInputBox">
+<button type="button" onclick="whichShoes()">Which shoes?</button>
+<div id="outputDiv"></div> 
+</body> 
+</html>

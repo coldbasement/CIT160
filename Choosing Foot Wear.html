@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Choosing Foot Wear</title>
+<script type="text/javascript">
+
+function getFootwear()
+	{
+		/*
+		Input: Weather type (hot, rain, snow, or other)
+		Processing: based on user input, If statement suggests type of foot wear(sandles, galoshes, boots)
+		Output: Type of Footwear 
+		*/
+	
+	var weather = document.getElementById('weather').value;
+	var response;
+	    
+		if(weather == "hot" )
+		{
+		var response = "sandals"; 	
+		
+		} else if (weather == "rain")
+		{
+		 var response = "galoshes";
+			
+		} else if ( weather == "snow")
+		{
+	     var response = "boots";
+			
+		} else
+		{
+		 var response = "shoes";
+		
+		}
+	
+	
+	document.getElementById('shoeDiv').innerHTML = response;
+	
+}
+</script>
+</head>
+<body>
+Enter the weather conditions(hot, rain, snow, other) for advised footwear : <input type="text" id="weather"><br>
+<br>
+<button type="button" onclick="getFootwear()">Advised Protection </button> 
+<p>============================================================</p>
+<div id="shoeDiv"></div>                
+</body>
+</html>

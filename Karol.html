@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Parameters</title>
+<script type="text/javascript">
+/* Input: get a temperature from the first text field
+get a wind speed from the second text field
+* Processing: Computing the wind chill factor, the first function call to the second, and the second return the value.
+* Output: Show wind chill factor
+*/
+
+var windChillFactor;
+function doInputOutput(tempF, speed){
+var tempF = parseInt(document.getElementById('inputTemperature').value);
+var speed = parseInt(document.getElementById('inputWindSpeed').value);
+windChillFactor = windChill(tempF, speed);
+
+document.getElementById('output').innerHTML = windChillFactor;
+} 
+
+function windChill(tempF, speed) {
+windChillFactor = 35.74 + (0.6215 * tempF) - (35.75 * Math.pow(speed, 0.16)) + (0.4275 * tempF * Math.pow(speed, 0.16));
+windChillFactor = Math.round(windChillFactor*100)/100;
+return (windChillFactor);
+
+}
+
+</script>
+</head>
+<body>
+Temperature (Fahrenheit): <input type="text" id="inputTemperature" size="5"><br>
+Wind Speed (mph): <input type="text" id="inputWindSpeed" size="5"><br>
+<button type="button" onclick="doInputOutput()">Wind Chill</button>
+<div id="output"></div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>5timestable</title>
+<script>
+/*
+Input: If I were to build a program like this I would have a input field for base number and Multiplier 
+Processing: compute base number by multiplier 
+Output: Product of base number and multiplier 
+
+*/
+function five(){
+  var i;
+  var text ="";
+for (i=1; i<=12; i++)
+{
+  text += " 5 x " + i + " = " + (5*i) + "<br>";
+}
+document.getElementById("outPut").innerHTML =text;	
+}
+</script>
+</head>
+
+<body>
+<h1>5 Times Tables</h1>
+<button type="button" onClick="five()">five times table</button>
+<div id="outPut"></div>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<script type="text/javascript">
+/*
+Input:Temperature In Fahrenheit and WindSpeed in Miles Per Hour
+Processing: Using Wind Chill Factor Fomula f = 35.74 + 0.6215 t - 35.75 s0.16 + 0.4275 t s0.16
+Output: Windchill Factor in Degrees Fahrenheit 
+
+*/
+function doInputOutput()
+{
+ var temperature = parseFloat(document.getElementById('temp').value);	
+ var windSpeed = parseFloat(document.getElementById('wind').value);	
+ var result = windChill(temperature,windSpeed);
+ document.getElementById('outputDiv').innerHTML= result + " Degrees Fahrenheit";
+}
+
+
+function windChill (temperature, windSpeed)
+
+	{
+ var chillWind = (35.74 + 0.6215* temperature - 35.75 * Math.pow(windSpeed,0.16)+
+				0.4275* temperature * Math.pow(windSpeed,0.16)).toFixed(2);	
+		
+ return chillWind;
+}
+    
+					
+</script>
+</head>
+
+<body>
+<h1>Please Enter For Wind Chill Calculation</h1>
+Temperature(Fahrenheit): <input type="text" id="temp" size="4"><br>
+Wind Speed(Miles Per Hour): <input type="text" id="wind" size="4"><br>
+<button type="button" onclick="doInputOutput()">Wind Chill</button><br>
+====================================================================
+<div id="outputDiv"></div>
+</body>
+</html>

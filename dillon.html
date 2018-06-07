@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Title</title>
+<script type="text/javascript">
+function doInputOutput() {
+    //These need to be floats because of Decimals
+	var temp = parseFloat(document.getElementById("temp").value);
+    var speed = parseFloat(document.getElementById("speed").value);
+    var output = windChill(temp, speed);
+    document.getElementById('output').innerHTML= output;
+    }
+    function windChill(temp, speed) {
+         //added a varriable   
+		//okay this needed some work but that is okay :)
+		var chill = (35.74 + 0.6215* temp - 35.75 * Math.pow(speed,0.16)+
+				0.4275* temp * Math.pow(speed,0.16)).toFixed(2);	 
+		return chill;
+}
+</script>
+</head>
+
+<body>
+Temp: <input type="text" id="temp" size="5"><br>
+Wind Speed: <input type="text" id="speed" size="5"><br>
+<button type="button" onclick="doInputOutput()">Wind Chill</button>
+<div id="output"></div>
+</body>
+</html>

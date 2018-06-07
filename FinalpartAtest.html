@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Make Location</title>
+<script>
+	function getLocation()
+	{
+		var city = "Rexburg";
+		var state= "Idaho";
+		var zipcode = "83440";
+		var region = makeLocation(city, state, zipcode);
+		document.getElementById('outputDiv').innerHTML = region;
+	}
+	
+	function makeLocation(city, state, zipcode)
+{
+	var i = city + ", " + state +" "+zipcode;
+	return i;
+}
+	
+	
+	</script>
+</head>
+
+<body>
+<h1>Get Location</h1>
+<button type="button" onClick="getLocation()">Get Location</button>
+<div id="outputDiv"></div>
+</body>
+</html>

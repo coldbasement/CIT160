@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>SumValueinArray</title>
+<script>
+
+function getList()
+{
+var list= [-8.2,-0.1,6.7,-2.2,9.8,4.3,3.6,-9.4,8.3,7.4];
+var sum= addEnds(list);
+document.getElementById('output').innerHTML = sum;
+}
+
+function addEnds(list)	
+{
+	var total= list[0]+ list[list.length - 1];
+	
+	return total
+}
+</script>
+</head>
+
+<body>
+<h1>Sum Value in Array</h1>
+<button type="button" onClick="getList()">Click to Sum</button>
+<div id="output"></div>	
+</body>
+</html>

@@ -1,0 +1,70 @@
+
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Retail Store Info</title>
+
+<script type="text/javascript">
+//Thanks to my home teacher Aaron Boushley for helping me.
+/*Input; subtotal amount
+*Processing: determine day of week to qualify for discount 
+*Output: total including discount and tax
+*/
+var daysOfWeek = {
+sunday: 0,
+monday: 1,
+tuesday: 2,
+wednesday: 3,
+thursday: 4,
+friday: 5,
+saturday: 6
+}
+
+function isTuesdayOrWednesday(dayOfWeek) {
+return dayOfWeek == daysOfWeek.tuesday || dayOfWeek == daysOfWeek.wednesday
+}
+function getDiscount (subtotal){
+var myDate = new Date();
+var dayOfWeek = myDate.getDay ();
+if ((subtotal >= 50) && isTuesdayOrWednesday(dayOfWeek)) {
+return (subtotal *.1)
+}
+else {
+return 0 
+}
+
+}
+function discountShoppingDays(){
+//Input shopping subtotal
+
+
+//Tuesday or Wednesday discount days
+
+var subtotal = parseFloat(document.getElementById("subtotalInputBox").value);
+
+//User gets response.
+var discount = getDiscount (subtotal)
+var discountedTotal = subtotal-discount;
+var tax = 0.06 * discountedTotal
+var total = discountedTotal + tax
+
+
+
+
+
+document.getElementById("outputDiv").innerHTML = total;
+
+}
+</script>
+</head>
+<body>
+<h2>Is it discount day?</h2><br><br>
+
+<input type="text" id="subtotalInputBox"> 
+
+<button type="button" onclick="discountShoppingDays()">Total</button>
+
+<div id="outputDiv"></div>
+</body>
+</html>
